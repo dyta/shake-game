@@ -41,13 +41,17 @@
 		<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
 		<script>
 			// Initialize Firebase
-			var config = {
+			var firebaseConfig = {
 				apiKey: 'AIzaSyAZJTsOArWdw_6H40vzRPcouGsjcXPFXio',
 				authDomain: 'game-13917.firebaseapp.com',
 				databaseURL: 'https://game-13917.firebaseio.com',
-				projectId: 'game-13917'
+				projectId: 'game-13917',
+				storageBucket: '',
+				messagingSenderId: '961976820086',
+				appId: '1:961976820086:web:10af1e0b2d5a50bc5c9a57'
 			};
-			firebase.initializeApp(config);
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
 			startGame = 0;
 
 			var url_string = window.location.href;
