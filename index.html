@@ -91,7 +91,7 @@
 			$('#startGameDiv').html('<br><button class="btn btn-lg btn-default" onclick="gameStart();return false;">START GAME</button><br><br>');
 
 			//listen to shake event
-			scoreAdd = 0;
+			var scoreAdd = 0;
 			var shakeEvent = new Shake({ threshold: 15 });
 			shakeEvent.start();
 			window.addEventListener(
