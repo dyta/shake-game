@@ -87,17 +87,8 @@
 			//     startGame=0;
 			//     scoreAdd=0;
 			// });
-			var database = firebase.database();
-			var ControlGame2 = database.ref('ControlGame/' + team + '/startBtn');
-			ControlGame2.on('value', function(snapshot) {
-				if (snapshot.val() == 'on') {
-					$('#startGameDiv').html('<br><button class="btn btn-lg btn-default" onclick="gameStart();return false;">START GAME</button><br><br>');
-				} else {
-					$('#startGameDiv').html('<br><button class="btn btn-lg btn-default" disabled>START GAME</button><br><br>');
-					startGame = 0;
-					scoreAdd = 0;
-				}
-			});
+
+			$('#startGameDiv').html('<br><button class="btn btn-lg btn-default" onclick="gameStart();return false;">START GAME</button><br><br>');
 
 			//listen to shake event
 			scoreAdd = 0;
