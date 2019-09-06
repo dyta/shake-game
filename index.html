@@ -88,7 +88,6 @@
 			//     scoreAdd=0;
 			// });
 			var database = firebase.database();
-			alert(database);
 			var ControlGame2 = firebase.database().ref('ControlGame/' + team + '/startBtn');
 			ControlGame2.on('value', function(snapshot) {
 				if (snapshot.val() == 'on') {
@@ -99,7 +98,6 @@
 					scoreAdd = 0;
 				}
 			});
-			$('#loader').fadeOut(1000);
 
 			//listen to shake event
 			scoreAdd = 0;
