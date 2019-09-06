@@ -91,18 +91,12 @@
 			$('#startGameDiv').html('<br><button class="btn btn-lg btn-default" onclick="gameStart();return false;">START GAME</button><br><br>');
 
 			//listen to shake event
-			var scoreAdd = 0;
+			var scoreAdd = scoreAdd + Math.floor(Math.random() * 3) + 1;
+			$('#scoreTxt').html('<h3>' + scoreAdd + '</h3>');
+			writeUserData(userId, team, scoreAdd);
 			var shakeEvent = new Shake({ threshold: 15 });
 			shakeEvent.start();
-			window.addEventListener(
-				'shake',
-				function() {
-					scoreAdd = scoreAdd + Math.floor(Math.random() * 3) + 1;
-					$('#scoreTxt').html('<h3>' + scoreAdd + '</h3>');
-					writeUserData(userId, team, scoreAdd);
-				},
-				false
-			);
+			window.addEventListener('shake', function() {}, false);
 
 			//stop listening
 			function stopShake() {
