@@ -88,7 +88,7 @@
 			//     scoreAdd=0;
 			// });
 			var database = firebase.database();
-			var ControlGame2 = firebase.database().ref('ControlGame/' + team + '/startBtn');
+			var ControlGame2 = database.ref('ControlGame/' + team + '/startBtn');
 			ControlGame2.on('value', function(snapshot) {
 				if (snapshot.val() == 'on') {
 					$('#startGameDiv').html('<br><button class="btn btn-lg btn-default" onclick="gameStart();return false;">START GAME</button><br><br>');
