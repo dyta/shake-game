@@ -38,7 +38,6 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="https://cdn.rawgit.com/alexgibson/shake.js/master/shake.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
-		<script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
 		<script>
 			// Initialize Firebase
 			var firebaseConfig = {
@@ -55,13 +54,13 @@
 			startGame = 0;
 
 			var url_string = window.location.href;
-			alert(url_string);
-			var url = new URL(url_string);
-			var team = url.searchParams.get('team');
-			var userId = url.searchParams.get('userId');
-			localStorage.setItem('userId', userId);
+			var urlx = new URL(url_string);
+			var team = urlx.searchParams.get('team');
+			var userId = urlx.searchParams.get('userId');
 
+			localStorage.setItem('userId', userId);
 			localStorage.setItem('team', team);
+
 			if (team == 1) {
 				$('body').css('background-image', 'url(images/bg_blue.jpg)');
 				$('#coinImg').html('<img src="images/coin1.png" width="100%" alt="">');
@@ -85,7 +84,7 @@
 			//     scoreAdd=0;
 			// });
 			var database = firebase.database();
-			console.log(`Result: database`, database);
+			alert(database);
 			var ControlGame2 = firebase.database().ref('ControlGame/' + team + '/startBtn');
 			ControlGame2.on('value', function(snapshot) {
 				if (snapshot.val() == 'on') {
