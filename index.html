@@ -97,11 +97,9 @@
 			window.addEventListener(
 				'shake',
 				function() {
-					if (startGame == 1) {
-						scoreAdd = scoreAdd + Math.floor(Math.random() * 3) + 1;
-						$('#scoreTxt').html('<h3>' + scoreAdd + '</h3>');
-						writeUserData(localStorage.getItem('userId'), localStorage.getItem('team'), scoreAdd);
-					}
+					scoreAdd = scoreAdd + Math.floor(Math.random() * 3) + 1;
+					$('#scoreTxt').html('<h3>' + scoreAdd + '</h3>');
+					writeUserData(userId, team, scoreAdd);
 				},
 				false
 			);
